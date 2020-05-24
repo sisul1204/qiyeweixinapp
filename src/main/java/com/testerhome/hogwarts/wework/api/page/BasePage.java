@@ -4,6 +4,8 @@ import com.testerhome.hogwarts.wework.api.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class BasePage {
     public WebElement find(By by){
         //todo:弹窗处理
@@ -36,5 +38,10 @@ public class BasePage {
     public String attribute(By by,String name){
         return find(by).getAttribute(name);
     }
+
+    public List<WebElement> findElements(By by){
+        return Driver.getInstance().appiumDriver.findElements(by);
+    }
+
 
 }
